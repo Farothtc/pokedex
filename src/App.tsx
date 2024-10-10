@@ -23,7 +23,7 @@ function pokedata(){
 
   return (
     <>
-      <div>
+      <div className="app--all">
         <Pokemon />
         <button onClick={pokedata}>Fetch Pokemon Data</button>
       </div>
