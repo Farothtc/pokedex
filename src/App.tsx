@@ -1,12 +1,13 @@
 import { useState } from "react"
 import axios from "axios";
+import { Pokemon } from "./components/Pokemon";
 
 function App() {
   const [dataAPI, setDataAPI] = useState({});
   
   const POKEMON_API = "https://pokeapi.co/api/v2/pokemon"
 
-async function pokedata(){
+function pokedata(){
     axios.get(POKEMON_API)
     .then(response => {
       setDataAPI(response.data)
@@ -23,6 +24,7 @@ async function pokedata(){
   return (
     <>
       <div>
+        <Pokemon />
         <button onClick={pokedata}>Fetch Pokemon Data</button>
       </div>
     </>
