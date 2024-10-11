@@ -7,8 +7,8 @@ interface PokemonProps {
 
 export function Pokemon({ e }: PokemonProps) {
   return (
-    <div className="poke--all">
-      <h2>Hi I am {e.name}</h2>
+    <div className="col-3 my-5 poke--card">
+      <h2>{e.name}</h2>
     </div>
   );
 }
