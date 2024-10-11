@@ -1,11 +1,12 @@
 import { Pokemon } from "./components/Pokemon";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import PokeDataImages from "./lib/PokeDataImages";
 
 function App() {
   const [dataAPI, setDataAPI] = useState([]);
 
-  const POKEMON_API = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
+  const POKEMON_API = "https://pokeapi.co/api/v2/pokemon?limit=6&offset=0";
 
   async function pokedata() {
     try {
@@ -20,7 +21,9 @@ function App() {
     pokedata();
   }, []);
 
-  const PokeData = dataAPI.map((e, index) => <Pokemon key={index} e={e} />);
+  const PokeData = dataAPI.map((e, index) => (
+    <Pokemon key={index} e={e} img={PokeDataImages[index]} />
+  ));
 
   return (
     <>
