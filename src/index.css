@@ -9,3 +9,12 @@
     justify-content: center;
     align-items: center;    
 }
+
+.card img{
+    height: 40vh;
+}
+
+.title--wrapper{
+    display: flex;
+    justify-content: space-between;
+}
