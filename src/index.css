@@ -75,3 +75,12 @@
     margin-right: 5px;
 
 }
+
+/* PokeStats */
+
+.sing--poke--cont{
+    width: 50% !important;
+    display: flex;
+    justify-content: center;   
+
+}
