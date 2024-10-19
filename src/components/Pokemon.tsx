@@ -36,13 +36,22 @@ export function Pokemon({ e, img }: PokemonDataProps) {
   return (
     <div className="col-4 my-5 poke--card">
       <div className="card">
-        <Link to={`/pokestats/${e.name}`}>
+        <Link
+          to={`/${e.name}`}
+          state={{
+            pokemonDataProps: {
+              name: e.name,
+              img: img.img,
+              pokeType: img.pokeType,
+            },
+          }}
+        >
           <img src={img.img} className="card-img-top border-bottom" />
         </Link>
         <div className="card-body">
           <div className="title--wrapper">
             <h4 className="card-title">
-              <Link to={`/pokestats/${e.name}`}>
+              <Link to={`/${e.name}`}>
                 {e.name.charAt(0).toUpperCase() + e.name.slice(1)}
               </Link>
             </h4>
@@ -62,9 +71,6 @@ export function Pokemon({ e, img }: PokemonDataProps) {
                 </span>
               )}
             </h5>
-          </div>
-          <div className="card-text mt-5">
-            <p>Weight:</p>
           </div>
         </div>
       </div>
