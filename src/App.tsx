@@ -17,8 +17,27 @@ function App() {
     }
   }
 
+  console.log(dataAPI);
+
+  const [bulbo, setBulbo] = useState([]);
+
+  const BULBO_API = "https://pokeapi.co/api/v2/pokemon/bulbasaur";
+
+  async function bulboData() {
+    try {
+      const response = await axios.get(BULBO_API);
+      setBulbo(response.data.Weight);
+      // console.log(bulbo);
+    } catch (error) {
+      console.log("Error fetching data:", error);
+    }
+  }
+
+  // console.log(bulbo);
+
   useEffect(() => {
     pokedata();
+    bulboData();
   }, []);
 
   const PokeData = dataAPI.map((e, index) => (
@@ -29,7 +48,7 @@ function App() {
     <>
       <div className="container app--all">
         <div className="row">
-          <h2 className="display-5 my-5 text-center">Pokedex</h2>
+          <h2 className="display-5 my-5 text-center">Pokedex - 9</h2>
           {PokeData}
         </div>
       </div>
