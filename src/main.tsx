@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/pokestats/:pokemonName",
+    path: "/:pokemonName",
     element: <PokeStats />,
   },
 ]);
