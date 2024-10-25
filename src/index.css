@@ -76,6 +76,11 @@
 
 }
 
+.card-title > a {
+    color: black;
+    text-decoration: none;
+}
+
 /* PokeStats */
 
 .sing--poke--cont{
