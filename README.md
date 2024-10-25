@@ -1,3 +1,3 @@
-# Pokemons With React.ts + Axios !
+# Pokemons With React.ts + React Router + Axios !
 
-Lets begin !
+A simple website for the informations on pokemon.
