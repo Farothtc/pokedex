@@ -1,6 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 type bulbo = {
   weight: number;
@@ -43,7 +44,14 @@ export const PokeStats = () => {
     <div>
       <div className="container sing--poke--cont mt-5">
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 d-flex justify-content-center mb-5 mt-2">
+            <Link to={`/`}>
+              <button className="btn btn-outline-dark">
+                Return to Pokedex
+              </button>
+            </Link>
+          </div>
+          <div className="col-12 mb-5">
             <div className="card">
               <img
                 src={pokemonDataProps.img}
@@ -77,7 +85,54 @@ export const PokeStats = () => {
                   </h5>
                 </div>
                 <div className="card-text mt-5">
-                  <p>{bulbo ? bulbo.stats[0].stat.name : "Loading.."}</p>
+                  <p>
+                    {bulbo
+                      ? bulbo.stats[0].stat.name.charAt(0).toUpperCase() +
+                        bulbo.stats[0].stat.name.slice(1) +
+                        ":         " +
+                        bulbo.stats[0].base_stat
+                      : "Loading.."}
+                  </p>
+                  <p>
+                    {bulbo
+                      ? bulbo.stats[1].stat.name.charAt(0).toUpperCase() +
+                        bulbo.stats[1].stat.name.slice(1) +
+                        ":         " +
+                        bulbo.stats[1].base_stat
+                      : "Loading.."}
+                  </p>
+                  <p>
+                    {bulbo
+                      ? bulbo.stats[2].stat.name.charAt(0).toUpperCase() +
+                        bulbo.stats[2].stat.name.slice(1) +
+                        ":         " +
+                        bulbo.stats[2].base_stat
+                      : "Loading.."}
+                  </p>
+                  <p>
+                    {bulbo
+                      ? bulbo.stats[3].stat.name.charAt(0).toUpperCase() +
+                        bulbo.stats[3].stat.name.slice(1) +
+                        ":         " +
+                        bulbo.stats[3].base_stat
+                      : "Loading.."}
+                  </p>
+                  <p>
+                    {bulbo
+                      ? bulbo.stats[4].stat.name.charAt(0).toUpperCase() +
+                        bulbo.stats[4].stat.name.slice(1) +
+                        ":         " +
+                        bulbo.stats[4].base_stat
+                      : "Loading.."}
+                  </p>
+                  <p>
+                    {bulbo
+                      ? bulbo.stats[5].stat.name.charAt(0).toUpperCase() +
+                        bulbo.stats[5].stat.name.slice(1) +
+                        ":         " +
+                        bulbo.stats[5].base_stat
+                      : "Loading.."}
+                  </p>
                   <p>Weight: {bulbo ? bulbo.weight : "Loading.."} </p>
                 </div>
               </div>
@@ -85,7 +140,6 @@ export const PokeStats = () => {
           </div>
         </div>
       </div>
-      <h2>Welcome to PokeStats: {pokemonName}</h2>
     </div>
   );
 };
