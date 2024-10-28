@@ -57,8 +57,8 @@ export const PokeStats = () => {
                 src={pokemonDataProps.img}
                 className="card-img-top border-bottom"
               />
-              <div className="card-body">
-                <div className="title--wrapper">
+              <div className="card-body" id="poke--stats--body">
+                <div className="title--wrapper--stats">
                   <h4 className="card-title">
                     {pokemonDataProps.name.charAt(0).toUpperCase() +
                       pokemonDataProps.name.slice(1)}
@@ -85,55 +85,188 @@ export const PokeStats = () => {
                   </h5>
                 </div>
                 <div className="card-text mt-5">
-                  <p>
-                    {bulbo
-                      ? bulbo.stats[0].stat.name.charAt(0).toUpperCase() +
-                        bulbo.stats[0].stat.name.slice(1) +
-                        ":         " +
-                        bulbo.stats[0].base_stat
-                      : "Loading.."}
-                  </p>
-                  <p>
-                    {bulbo
-                      ? bulbo.stats[1].stat.name.charAt(0).toUpperCase() +
-                        bulbo.stats[1].stat.name.slice(1) +
-                        ":         " +
-                        bulbo.stats[1].base_stat
-                      : "Loading.."}
-                  </p>
-                  <p>
-                    {bulbo
-                      ? bulbo.stats[2].stat.name.charAt(0).toUpperCase() +
-                        bulbo.stats[2].stat.name.slice(1) +
-                        ":         " +
-                        bulbo.stats[2].base_stat
-                      : "Loading.."}
-                  </p>
-                  <p>
-                    {bulbo
-                      ? bulbo.stats[3].stat.name.charAt(0).toUpperCase() +
-                        bulbo.stats[3].stat.name.slice(1) +
-                        ":         " +
-                        bulbo.stats[3].base_stat
-                      : "Loading.."}
-                  </p>
-                  <p>
-                    {bulbo
-                      ? bulbo.stats[4].stat.name.charAt(0).toUpperCase() +
-                        bulbo.stats[4].stat.name.slice(1) +
-                        ":         " +
-                        bulbo.stats[4].base_stat
-                      : "Loading.."}
-                  </p>
-                  <p>
-                    {bulbo
-                      ? bulbo.stats[5].stat.name.charAt(0).toUpperCase() +
-                        bulbo.stats[5].stat.name.slice(1) +
-                        ":         " +
-                        bulbo.stats[5].base_stat
-                      : "Loading.."}
-                  </p>
-                  <p>Weight: {bulbo ? bulbo.weight : "Loading.."} </p>
+                  <div className="stats--wrapper border border-top mb-2">
+                    <div className="ms-2">
+                      {bulbo
+                        ? bulbo.stats[0].stat.name.charAt(0).toUpperCase() +
+                          bulbo.stats[0].stat.name.slice(1) +
+                          ":         "
+                        : "Loading.."}
+                    </div>
+                    <div
+                      className="progress col-md-6"
+                      role="progressbar"
+                      aria-label="Example with label"
+                      aria-valuenow={bulbo ? bulbo.stats[0].base_stat : 0}
+                      aria-valuemin={0}
+                      aria-valuemax={10}
+                    >
+                      <div
+                        className="progress-bar bg-success"
+                        style={{
+                          width: `${bulbo ? bulbo.stats[0].base_stat : 0}%`,
+                        }}
+                      >
+                        {bulbo ? bulbo.stats[0].base_stat : 0}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="stats--wrapper border border-top mb-2">
+                    <div className="ms-2">
+                      {bulbo
+                        ? bulbo.stats[1].stat.name.charAt(0).toUpperCase() +
+                          bulbo.stats[1].stat.name.slice(1) +
+                          ":         "
+                        : "Loading.."}
+                    </div>
+                    <div
+                      className="progress col-md-6"
+                      role="progressbar"
+                      aria-label="Example with label"
+                      aria-valuenow={bulbo ? bulbo.stats[1].base_stat : 0}
+                      aria-valuemin={0}
+                      aria-valuemax={10}
+                    >
+                      <div
+                        className="progress-bar bg-danger"
+                        style={{
+                          width: `${bulbo ? bulbo.stats[1].base_stat : 0}%`,
+                        }}
+                      >
+                        {bulbo ? bulbo.stats[1].base_stat : 0}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="stats--wrapper border border-top mb-2">
+                    <div className="ms-2">
+                      {bulbo
+                        ? bulbo.stats[2].stat.name.charAt(0).toUpperCase() +
+                          bulbo.stats[2].stat.name.slice(1) +
+                          ":         "
+                        : "Loading.."}
+                    </div>
+                    <div
+                      className="progress col-md-6"
+                      role="progressbar"
+                      aria-label="Example with label"
+                      aria-valuenow={bulbo ? bulbo.stats[2].base_stat : 0}
+                      aria-valuemin={0}
+                      aria-valuemax={10}
+                    >
+                      <div
+                        className="progress-bar bg-warning"
+                        style={{
+                          width: `${bulbo ? bulbo.stats[2].base_stat : 0}%`,
+                        }}
+                      >
+                        {bulbo ? bulbo.stats[2].base_stat : 0}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="stats--wrapper border border-top mb-2">
+                    <div className="ms-2">
+                      {bulbo
+                        ? bulbo.stats[3].stat.name.charAt(0).toUpperCase() +
+                          bulbo.stats[3].stat.name.slice(1) +
+                          ":         "
+                        : "Loading.."}
+                    </div>
+                    <div
+                      className="progress col-md-6"
+                      role="progressbar"
+                      aria-label="Example with label"
+                      aria-valuenow={bulbo ? bulbo.stats[3].base_stat : 0}
+                      aria-valuemin={0}
+                      aria-valuemax={10}
+                    >
+                      <div
+                        className="progress-bar bg-dark"
+                        style={{
+                          width: `${bulbo ? bulbo.stats[3].base_stat : 0}%`,
+                        }}
+                      >
+                        {bulbo ? bulbo.stats[3].base_stat : 0}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="stats--wrapper border border-top mb-2">
+                    <div className="ms-2">
+                      {bulbo
+                        ? bulbo.stats[4].stat.name.charAt(0).toUpperCase() +
+                          bulbo.stats[4].stat.name.slice(1) +
+                          ":         "
+                        : "Loading.."}
+                    </div>
+                    <div
+                      className="progress col-md-6"
+                      role="progressbar"
+                      aria-label="Example with label"
+                      aria-valuenow={bulbo ? bulbo.stats[4].base_stat : 0}
+                      aria-valuemin={0}
+                      aria-valuemax={10}
+                    >
+                      <div
+                        className="progress-bar bg-info"
+                        style={{
+                          width: `${bulbo ? bulbo.stats[4].base_stat : 0}%`,
+                        }}
+                      >
+                        {bulbo ? bulbo.stats[4].base_stat : 0}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="stats--wrapper border border-top mb-2">
+                    <div className="ms-2">
+                      {bulbo
+                        ? bulbo.stats[5].stat.name.charAt(0).toUpperCase() +
+                          bulbo.stats[5].stat.name.slice(1) +
+                          ":         "
+                        : "Loading.."}
+                    </div>
+                    <div
+                      className="progress col-md-6"
+                      role="progressbar"
+                      aria-label="Example with label"
+                      aria-valuenow={bulbo ? bulbo.stats[5].base_stat : 0}
+                      aria-valuemin={0}
+                      aria-valuemax={10}
+                    >
+                      <div
+                        className="progress-bar bg-primary"
+                        style={{
+                          width: `${bulbo ? bulbo.stats[5].base_stat : 0}%`,
+                        }}
+                      >
+                        {bulbo ? bulbo.stats[5].base_stat : 0}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="stats--wrapper border border-top mb-2">
+                    <div className="ms-2">Weight:</div>
+                    <div
+                      className="progress col-md-6"
+                      role="progressbar"
+                      aria-label="Example with label"
+                      aria-valuenow={bulbo ? bulbo.weight : 0}
+                      aria-valuemin={0}
+                      aria-valuemax={1000}
+                    >
+                      <div
+                        className="progress-bar bg-secondary"
+                        style={{
+                          width: `${bulbo ? bulbo.weight : 0}%`,
+                        }}
+                      >
+                        {bulbo ? bulbo.weight : 0}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
