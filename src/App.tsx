@@ -5,6 +5,7 @@ import PokeDataLib from "./lib/PokeDataLib";
 
 function App() {
   const [dataAPI, setDataAPI] = useState([]);
+  const [pokeSearch, setPokeSearch] = useState("");
 
   const POKEMON_API = "https://pokeapi.co/api/v2/pokemon?limit=9&offset=0";
 
@@ -25,7 +26,13 @@ function App() {
     pokedata();
   }, []);
 
-  const PokeData = dataAPI.map((e, index) => (
+  const pokeFilter = dataAPI.filter((pokemonList: any) => {
+    return pokemonList.name
+      .toLowerCase()
+      .includes(pokeSearch.toLocaleLowerCase());
+  });
+
+  const PokeData = pokeFilter.map((e, index) => (
     <Pokemon key={index} e={e} img={PokeDataLib[index]} />
   ));
 
@@ -34,6 +41,23 @@ function App() {
       <div className="container app--all">
         <div className="row">
           <h2 className="display-5 my-5 text-center">Pokedex - 9</h2>
+          <div className="col-md-12">
+            <form action="#" className="text-center" id="search--form">
+              <label htmlFor="name" className="me-2">
+                Search Engine:
+              </label>
+              <input
+                type="text"
+                placeholder="Blastoise"
+                name="PokemonName"
+                className="form-control"
+                value={pokeSearch}
+                onChange={(el) => setPokeSearch(el.target.value)}
+                autoComplete="off"
+                id="search--form--input"
+              />
+            </form>
+          </div>
           {PokeData}
         </div>
       </div>
