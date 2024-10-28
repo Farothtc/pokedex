@@ -48,7 +48,7 @@ function App() {
               </label>
               <input
                 type="text"
-                placeholder="Blastoise"
+                placeholder="Blastoise, Charizard, Charmander etc."
                 name="PokemonName"
                 className="form-control"
                 value={pokeSearch}
