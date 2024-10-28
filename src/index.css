@@ -4,10 +4,27 @@
     justify-content: center;
 }
 
+#search--form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search--form--input{
+    width: 40vh;
+}
+
+
+
 .poke--card{
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;      
+}
+
+#pokemeon--card--body{
+    width: 40vh;
+    height: 7vh;
 }
 
 .card img{
@@ -16,7 +33,7 @@
 
 .title--wrapper{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;    
 }
 
@@ -28,7 +45,8 @@
     padding: 5px 5px;
     border-radius: 5px;
     margin-right: 5px;
-    width: 80px;   
+    width: 80px;
+      
 }
 
 .poke-type-poison {
@@ -88,4 +106,21 @@
     display: flex;
     justify-content: center;   
 
+}
+
+#poke--stats--body{
+    width: auto;
+}
+
+.title--wrapper--stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.stats--wrapper{
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
 }
