@@ -12,7 +12,7 @@ type bulbo = {
       name: string;
       url: string;
     };
-  };
+  }[];
 };
 
 export const PokeStats = () => {
