@@ -37,6 +37,10 @@
     align-items: center;    
 }
 
+.title--wrapper > a {
+    font-size: 20vh;
+}
+
 .poke-type-grass {
     display: inline-block;
     text-align: center;
@@ -99,6 +103,31 @@
     text-decoration: none;
 }
 
+@media (max-width: 768px) {
+    #search--form{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    #search--form--input{
+        width: 30vh;
+    }
+
+    #pokemeon--card--body {
+        width: 35vh;
+        height: 7vh;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+    .card-title > a {
+        font-size: 2.5vh;
+        text-align: center;
+        padding: 0;
+    }
+}
+
 /* PokeStats */
 
 .sing--poke--cont{
@@ -123,4 +152,46 @@
     display: flex;    
     align-items: center;
     justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .stats--wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+
+    #poke--img{
+        height: 30vh;
+        width: auto;        
+    }
+
+    .title--wrapper--stats {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;       
+    }
+
+    .title--wrapper--stats > h4, .title--wrapper--stats > h5{
+        font-size: 2.5vh;
+    }
+
+    .poke-type-grass {        
+        width: 80px;
+        font-size: 1.5vh;
+
+    }
+
+    .poke-type-poison {
+       width: 80px;
+       font-size: 1.5vh;
+    }
+
+    #poke--stats--body {
+        display: flex;
+        flex-direction: column;        
+        width: auto;
+    }  
 }
