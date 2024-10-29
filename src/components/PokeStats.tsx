@@ -44,18 +44,19 @@ export const PokeStats = () => {
     <div>
       <div className="container sing--poke--cont mt-5">
         <div className="row">
-          <div className="col-12 d-flex justify-content-center mb-5 mt-2">
+          <div className="col-md-12 d-flex justify-content-center mb-5 mt-2">
             <Link to={`/`}>
               <button className="btn btn-outline-dark">
                 Return to Pokedex
               </button>
             </Link>
           </div>
-          <div className="col-12 mb-5">
+          <div className="col-md-12 mb-5">
             <div className="card">
               <img
                 src={pokemonDataProps.img}
                 className="card-img-top border-bottom"
+                id="poke--img"
               />
               <div className="card-body" id="poke--stats--body">
                 <div className="title--wrapper--stats">
@@ -94,7 +95,7 @@ export const PokeStats = () => {
                         : "Loading.."}
                     </div>
                     <div
-                      className="progress col-md-6"
+                      className="progress col-6"
                       role="progressbar"
                       aria-label="Example with label"
                       aria-valuenow={bulbo ? bulbo.stats[0].base_stat : 0}
@@ -121,7 +122,7 @@ export const PokeStats = () => {
                         : "Loading.."}
                     </div>
                     <div
-                      className="progress col-md-6"
+                      className="progress col-6"
                       role="progressbar"
                       aria-label="Example with label"
                       aria-valuenow={bulbo ? bulbo.stats[1].base_stat : 0}
@@ -148,7 +149,7 @@ export const PokeStats = () => {
                         : "Loading.."}
                     </div>
                     <div
-                      className="progress col-md-6"
+                      className="progress col-6"
                       role="progressbar"
                       aria-label="Example with label"
                       aria-valuenow={bulbo ? bulbo.stats[2].base_stat : 0}
@@ -175,7 +176,7 @@ export const PokeStats = () => {
                         : "Loading.."}
                     </div>
                     <div
-                      className="progress col-md-6"
+                      className="progress col-6"
                       role="progressbar"
                       aria-label="Example with label"
                       aria-valuenow={bulbo ? bulbo.stats[3].base_stat : 0}
@@ -202,7 +203,7 @@ export const PokeStats = () => {
                         : "Loading.."}
                     </div>
                     <div
-                      className="progress col-md-6"
+                      className="progress col-6"
                       role="progressbar"
                       aria-label="Example with label"
                       aria-valuenow={bulbo ? bulbo.stats[4].base_stat : 0}
@@ -229,7 +230,7 @@ export const PokeStats = () => {
                         : "Loading.."}
                     </div>
                     <div
-                      className="progress col-md-6"
+                      className="progress col-6"
                       role="progressbar"
                       aria-label="Example with label"
                       aria-valuenow={bulbo ? bulbo.stats[5].base_stat : 0}
@@ -250,17 +251,23 @@ export const PokeStats = () => {
                   <div className="stats--wrapper border border-top mb-2">
                     <div className="ms-2">Weight:</div>
                     <div
-                      className="progress col-md-6"
+                      className="progress col-6"
                       role="progressbar"
                       aria-label="Example with label"
                       aria-valuenow={bulbo ? bulbo.weight : 0}
                       aria-valuemin={0}
-                      aria-valuemax={1000}
+                      aria-valuemax={100}
                     >
                       <div
                         className="progress-bar bg-secondary"
                         style={{
-                          width: `${bulbo ? bulbo.weight : 0}%`,
+                          width: `${
+                            bulbo && bulbo.weight < 100
+                              ? bulbo
+                                ? bulbo.weight
+                                : 0
+                              : Math.ceil(bulbo ? bulbo.weight / 10 : 0)
+                          }%`,
                         }}
                       >
                         {bulbo ? bulbo.weight : 0}
