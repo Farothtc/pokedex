@@ -15,7 +15,7 @@ type PokemonDataProps = {
 
 export function Pokemon({ e, img }: PokemonDataProps) {
   return (
-    <div className="col-4 my-5 poke--card">
+    <div className="col-md-4 my-5 poke--card">
       <div className="card">
         <div className="card-body" id="pokemeon--card--body">
           <div className="title--wrapper">
