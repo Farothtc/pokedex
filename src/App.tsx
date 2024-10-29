@@ -20,8 +20,6 @@ function App() {
 
   console.log(dataAPI);
 
-  // console.log(bulbo);
-
   useEffect(() => {
     pokedata();
   }, []);
