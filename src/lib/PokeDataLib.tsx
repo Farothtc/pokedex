@@ -1,4 +1,10 @@
-export default [
+type PokemonType = {
+  id: number;
+  name: string;
+  img: string;
+  pokeType: string | string[];
+};
+const PokeDataLib: PokemonType[] = [
   {
     id: 0,
     name: "bulbasaur",
@@ -49,8 +55,46 @@ export default [
   },
   {
     id: 8,
-    name: "blastosite",
+    name: "blastoise",
     img: "/blastosite.png",
     pokeType: "Water",
   },
+  {
+    id: 9,
+    name: "caterpie",
+    img: "/caterpie.png",
+    pokeType: "Bug",
+  },
+  {
+    id: 10,
+    name: "metapod",
+    img: "/metapod.png",
+    pokeType: "Bug",
+  },
+  {
+    id: 11,
+    name: "butterfree",
+    img: "/butterfree.png",
+    pokeType: ["Bug", "Flying"],
+  },
+  {
+    id: 12,
+    name: "weedle",
+    img: "/weedle.png",
+    pokeType: ["Bug", "Poison"],
+  },
+  {
+    id: 13,
+    name: "kakuna",
+    img: "/kakuna.png",
+    pokeType: ["Bug", "Poison"],
+  },
+  {
+    id: 14,
+    name: "beedrill",
+    img: "/beedrill.png",
+    pokeType: ["Bug", "Poison"],
+  },
 ];
+
+export default PokeDataLib;
