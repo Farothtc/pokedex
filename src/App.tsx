@@ -3,11 +3,16 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import PokeDataLib from "./lib/PokeDataLib";
 
+type PokemonAPIType = {
+  name: string;
+  url: string;
+};
+
 function App() {
-  const [dataAPI, setDataAPI] = useState([]);
+  const [dataAPI, setDataAPI] = useState<PokemonAPIType[]>([]);
   const [pokeSearch, setPokeSearch] = useState("");
 
-  const POKEMON_API = "https://pokeapi.co/api/v2/pokemon?limit=9&offset=0";
+  const POKEMON_API = "https://pokeapi.co/api/v2/pokemon?limit=15&offset=0";
 
   async function pokedata() {
     try {
@@ -30,15 +35,26 @@ function App() {
       .includes(pokeSearch.toLocaleLowerCase());
   });
 
-  const PokeData = pokeFilter.map((e, index) => (
-    <Pokemon key={index} e={e} img={PokeDataLib[index]} />
-  ));
+  // const PokeData = pokeFilter.map((e, index) => (
+  //   <Pokemon key={index} e={e} img={PokeDataLib[index]} />
+  // ));
+
+  const PokeData = pokeFilter.map((e: PokemonAPIType) => {
+    const pokemonObj = PokeDataLib.find((p) => p.name === e.name) || {
+      id: -1,
+      name: "unknown",
+      img: "/whos.jpeg",
+      pokeType: "Unknown",
+    };
+
+    return <Pokemon key={e.name} e={e} img={pokemonObj} />;
+  });
 
   return (
     <>
       <div className="container app--all">
         <div className="row">
-          <h2 className="display-5 my-5 text-center">Pokedex - 9</h2>
+          <h2 className="display-5 my-5 text-center">Pokedex</h2>
           <div className="col-md-12">
             <form action="#" className="text-center" id="search--form">
               <label htmlFor="name" className="me-2">
