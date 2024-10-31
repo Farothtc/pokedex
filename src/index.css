@@ -1,3 +1,10 @@
+body{
+    background: linear-gradient(135deg, #F0F4FF, #E8FFF4);
+}
+
+.row > h2{
+    font-weight: 500;
+}
 .app--all{
     display: flex;
     align-items: center;
@@ -12,6 +19,7 @@
 
 #search--form--input{
     width: 40vh;
+    background-color: #F8F8FA;
 }
 
 
@@ -25,6 +33,8 @@
 #pokemeon--card--body{
     width: 40vh;
     height: 7vh;
+    background-color: #F8F8FA;
+    border-radius: 4px;
 }
 
 .card img{
@@ -132,6 +142,22 @@
     }
 }
 
+@media (min-width: 992px) and (max-width: 1200px) {
+    #pokemeon--card--body {
+        width: 30vh;
+        height: 7vh;
+        
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #pokemeon--card--body {
+        width: 20vh;
+        height: 7vh;
+
+    }
+}
+
 @media (min-width: 768px) and (max-width: 992px){
     .card-title > a {
         font-size: 2.5vh;
@@ -151,6 +177,8 @@
 
 #poke--stats--body{
     width: auto;
+    background: linear-gradient(135deg, #F0F4FF, #E8FFF4);
+    border-radius: 5px;
 }
 
 .title--wrapper--stats{
@@ -160,10 +188,19 @@
     border-bottom: 1px solid black;
 }
 
+.title--wrapper--stats > h4{
+    font-weight: 700;
+}
+
 .stats--wrapper{
     display: flex;    
     align-items: center;
     justify-content: space-between;
+    font-weight: 600;
+}
+
+#poke--img{
+    background: linear-gradient(135deg, #F0F4FF, #E8FFF4);
 }
 
 @media (max-width: 768px) {
